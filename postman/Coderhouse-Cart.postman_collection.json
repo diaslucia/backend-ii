@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "948463f5-8953-475e-a0c9-47d49d125193",
+		"name": "Coderhouse/Cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23582268"
+	},
+	"item": [
+		{
+			"name": "cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/cart/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "667873f06d17fcfbf41bb246"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\":[]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart/:id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/:cId/product/:pId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						":cId",
+						"product",
+						":pId"
+					],
+					"variable": [
+						{
+							"key": "cId",
+							"value": "667873f06d17fcfbf41bb246"
+						},
+						{
+							"key": "pId",
+							"value": "66771e39299d3d34550b8897"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/:cId/product/:pId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						":cId",
+						"product",
+						":pId"
+					],
+					"variable": [
+						{
+							"key": "cId",
+							"value": "667873f06d17fcfbf41bb246"
+						},
+						{
+							"key": "pId",
+							"value": "66771e39299d3d34550b8897"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\":\"800\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/:cId/product/:pId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						":cId",
+						"product",
+						":pId"
+					],
+					"variable": [
+						{
+							"key": "cId",
+							"value": "667873f06d17fcfbf41bb246"
+						},
+						{
+							"key": "pId",
+							"value": "66771e39299d3d34550b8897"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart/:id ALL",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cart/:cId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cart",
+						":cId"
+					],
+					"variable": [
+						{
+							"key": "cId",
+							"value": "667873f06d17fcfbf41bb246"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
