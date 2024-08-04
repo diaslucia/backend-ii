@@ -1,0 +1,52 @@
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 40px;
+}
+
+.title {
+  color: rgb(29, 93, 43);
+  font-size: 30px;
+  text-align: center;
+}
+
+.card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 20px;
+  width: 45%;
+  text-align: center;
+  position: relative;
+  max-width: 450px;
+}
+
+.card_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card_category {
+  color: #999;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 8px;
+  right: 20px;
+}
+
+.card_price {
+  font-size: 20px;
+  color: rgb(29, 93, 43);
+  font-weight: bold;
+}
