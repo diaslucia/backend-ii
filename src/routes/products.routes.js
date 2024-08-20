@@ -4,6 +4,7 @@ import { checkProductExists } from "../middleware/checkProductExists.middleware.
 import { checkProductPut } from "../middleware/checkProductPut.middleware.js";
 import { checkProductPost } from "../middleware/checkProductPost.middleware.js";
 import { authorization } from "../middleware/authorization.middleware.js";
+import { passportCall } from "../middleware/passport.middleware.js";
 // Controllers
 import productsControllers from "../controllers/products.controllers.js";
 
@@ -15,6 +16,7 @@ router.get("/:pId", checkProductExists, productsControllers.getProductById);
 
 router.post(
   "/",
+  passportCall("jwt"),
   authorization("admin"),
   checkProductPost,
   productsControllers.postProduct
@@ -22,6 +24,7 @@ router.post(
 
 router.put(
   "/:pId",
+  passportCall("jwt"),
   authorization("admin"),
   checkProductExists,
   checkProductPut,
@@ -30,6 +33,7 @@ router.put(
 
 router.delete(
   "/:pId",
+  passportCall("jwt"),
   authorization("admin"),
   checkProductExists,
   productsControllers.deleteProduct
