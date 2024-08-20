@@ -1,5 +1,5 @@
 import { request, response } from "express";
-import productDao from "../dao/managers/products.dao.js";
+import productRepository from "../managers/products.repository.js";
 
 export const checkProductExists = async (
   req = request,
@@ -9,7 +9,7 @@ export const checkProductExists = async (
   try {
     const { pId } = req.params;
 
-    const findCart = await productDao.getById(pId);
+    const findCart = await productRepository.getById(pId);
 
     if (!findCart)
       return res

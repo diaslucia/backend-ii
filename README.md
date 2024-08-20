@@ -44,7 +44,7 @@ The file structure is:
 - routes: to store all different routes for endpoints.
 - views: to store handlebars.
 - public: to store styles and js used to manage handlebars.
-- dao/managers: to store mongoose data managers.
-- dao/models: to store mongoose data models.
+- managers: to store mongoose data managers.
+- models: to store mongoose data models.
 - config: to store mongo, env and passport configurations.
 - utils: to store reusable functions.

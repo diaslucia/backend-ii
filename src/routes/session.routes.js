@@ -2,32 +2,14 @@ import { Router } from "express";
 import passport from "passport";
 import { passportCall } from "../middleware/passport.middleware.js";
 import { createToken } from "../utils/jwt.js";
+// Controllers
+import sessionControllers from "../controllers/session.controllers.js";
 
 const router = Router();
 
-router.post("/register", passportCall("register"), async (req, res) => {
-  try {
-    return res.status(201).json({ status: "success", message: "User created" });
-  } catch (error) {
-    return res
-      .status(500)
-      .json({ status: "error", message: "Internal server error" });
-  }
-});
+router.post("/register", passportCall("register"), sessionControllers.register);
 
-router.get("/login", passportCall("login"), async (req, res) => {
-  try {
-    const token = createToken(req.user);
-    res.cookie("token", token, { httpOnly: true });
-
-    return res.status(200).json({ status: "success", payload: req.user });
-  } catch (error) {
-    console.log(error);
-    return res
-      .status(500)
-      .json({ status: "error", message: "Internal server error" });
-  }
-});
+router.get("/login", passportCall("login"), sessionControllers.login);
 
 router.get(
   "/google",
@@ -38,19 +20,9 @@ router.get(
     ],
     session: false,
   }),
-  async (req, res) => {
-    try {
-      return res.status(200).json({ status: "success", payload: req.user });
-    } catch (error) {
-      return res
-        .status(500)
-        .json({ status: "error", message: "Internal server error" });
-    }
-  }
+  sessionControllers.loginGoogle
 );
 
-router.get("/current", passportCall("current"), async (req, res) => {
-  res.status(200).json({ status: "success", user: req.user });
-});
+router.get("/current", passportCall("current"), sessionControllers.getCurrent);
 
 export default router;
