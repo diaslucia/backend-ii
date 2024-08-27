@@ -36,15 +36,3 @@ Steps to install and run the project:
    npm run dev
    ```
 
-## 📂 Structure
-
-The file structure is:
-
-- middleware: to store middleware used in routes to verify requests.
-- routes: to store all different routes for endpoints.
-- views: to store handlebars.
-- public: to store styles and js used to manage handlebars.
-- managers: to store mongoose data managers.
-- models: to store mongoose data models.
-- config: to store mongo, env and passport configurations.
-- utils: to store reusable functions.
