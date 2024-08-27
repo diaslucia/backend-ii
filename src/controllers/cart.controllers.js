@@ -1,7 +1,7 @@
 import { request, response } from "express";
 import cartServices from "../services/cart.services.js";
 import ticketServices from "../services/ticket.services.js";
-
+import emailServices from "../services/email.services.js";
 const createCart = async (req = request, res = response) => {
   try {
     const cart = await cartServices.createCart();
@@ -100,6 +100,8 @@ const deleteCart = async (req = request, res = response) => {
 const purchaseCart = async (req = request, res = response) => {
   try {
     const { cId } = req.params;
+    // Send email confirmation
+    await emailServices.purchaseEmail(req.user._id, req.user.cart._id);
     const cartTotal = await cartServices.purchaseCart(cId);
     const ticket = await ticketServices.createTicket(req.user.email, cartTotal);
 

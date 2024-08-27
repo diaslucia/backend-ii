@@ -1,4 +1,3 @@
-import { respProductDto } from "../dto/product.dto.js";
 import productRepository from "../managers/products.repository.js";
 
 const getProducts = async (category, options) => {
@@ -10,16 +9,14 @@ const getProductsCategory = async (options) => {
 };
 
 const getProductById = async (pId) => {
-  const productData = await productRepository.getById(pId);
-  // esto es un ejemplo, pasarlo a otro lado
-  return respProductDto(productData);
+  return await productRepository.getById(pId);
 };
 
 const postProduct = async (productData) => {
   return await productRepository.create(productData);
 };
 
-const putProduct = async (pId) => {
+const putProduct = async (pId, productData) => {
   return await productRepository.update(pId, productData);
 };
 

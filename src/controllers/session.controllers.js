@@ -1,5 +1,6 @@
 import { request, response } from "express";
 import { createToken } from "../utils/jwt.js";
+import { respUserDto } from "../dto/user.dto.js";
 
 const register = async (req = request, res = response) => {
   try {
@@ -39,7 +40,8 @@ const loginGoogle = async (req = request, res = response) => {
 
 const getCurrent = async (req = request, res = response) => {
   try {
-    res.status(200).json({ status: "success", user: req.user });
+    const user = respUserDto(req.user);
+    res.status(200).json({ status: "success", user: user });
   } catch {
     console.log(error);
     return res

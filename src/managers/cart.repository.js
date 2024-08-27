@@ -82,15 +82,6 @@ const clearProductsInCart = async (cId) => {
   return cartUpdate;
 };
 
-const purchaseCart = async (cId) => {
-  const cartUpdate = cartModel.findOneAndUpdate(
-    { _id: cId },
-    { $set: { purchased: true } },
-    { new: true }
-  );
-  return cartUpdate;
-};
-
 export default {
   getAll,
   getById,
