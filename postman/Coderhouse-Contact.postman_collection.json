@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "f1e6a3f7-c367-46be-a8b8-50f5a2d38da0",
+		"name": "Coderhouse/Contact",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23582268"
+	},
+	"item": [
+		{
+			"name": "contact/email",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"\",\r\n    \"subject\": \"\",\r\n    \"message\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/contact/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contact",
+						"email"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "asc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
